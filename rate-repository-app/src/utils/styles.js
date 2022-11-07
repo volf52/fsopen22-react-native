@@ -10,6 +10,9 @@ const utilStyles = StyleSheet.create({
   justifyCenter: {
     justifyContent: "center",
   },
+  padding5: {
+    padding: 5,
+  },
   padding10: {
     padding: 10,
   },

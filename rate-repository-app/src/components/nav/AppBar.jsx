@@ -7,6 +7,7 @@ import theme from "../../theme"
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: Constants.statusBarHeight,
     backgroundColor: theme.colors.bg.bar,
     paddingHorizontal: Constants.statusBarHeight,
     height: 75,
@@ -17,7 +18,8 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <AppBarTab text="Repositories" />
+      <AppBarTab text="Repositories" link="/" />
+      <AppBarTab text="Sign in" link="/login" />
     </View>
   )
 }
