@@ -22,13 +22,13 @@ const styles = StyleSheet.create({
   },
 })
 
-const AppBarTab = ({ text, link }) => {
+const AppBarTab = ({ text, link, onPress }) => {
+  const textEl = <Text style={styles.text}>{text}</Text>
+
   return (
     <View style={styles.item}>
-      <Pressable style={styles.border}>
-        <Link to={link}>
-          <Text style={styles.text}>{text}</Text>
-        </Link>
+      <Pressable style={styles.border} onPress={onPress}>
+        {link ? <Link to={link}>{textEl}</Link> : textEl}
       </Pressable>
     </View>
   )

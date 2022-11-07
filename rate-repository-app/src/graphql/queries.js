@@ -63,3 +63,12 @@ export const GET_REPOSITORIES_WITH_VARS = gql`
     }
   }
 `
+
+export const GET_ME = gql`
+  query {
+    me {
+      username
+      id
+    }
+  }
+`
