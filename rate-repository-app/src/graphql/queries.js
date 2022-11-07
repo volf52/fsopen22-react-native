@@ -1,32 +1,8 @@
 import { gql } from "@apollo/client"
 
-export const GET_REPOSITORIES = gql`
-  query {
-    repositories {
-      edges {
-        node {
-          id
-          fullName
-          description
-          language
-          forksCount
-          stargazersCount
-          ratingAverage
-          reviewCount
-          ownerAvatarUrl
-        }
-        cursor
-      }
-      pageInfo {
-        endCursor
-        startCursor
-        hasNextPage
-      }
-    }
-  }
-`
+import { REPO_DETAILS } from "./fragments"
 
-export const GET_REPOSITORIES_WITH_VARS = gql`
+export const GET_REPOSITORIES = gql`
   query repositories(
     $orderBy: AllRepositoriesOrderBy
     $orderDirection: OrderDirection
@@ -43,15 +19,7 @@ export const GET_REPOSITORIES_WITH_VARS = gql`
     ) {
       edges {
         node {
-          id
-          fullName
-          description
-          language
-          forksCount
-          stargazersCount
-          ratingAverage
-          reviewCount
-          ownerAvatarUrl
+          ...RepoDetails
         }
         cursor
       }
@@ -62,6 +30,18 @@ export const GET_REPOSITORIES_WITH_VARS = gql`
       }
     }
   }
+
+  ${REPO_DETAILS}
+`
+
+export const GET_REPOSITORY = gql`
+  query repository($id: ID!) {
+    repository(id: $id) {
+      ...RepoDetails
+    }
+  }
+
+  ${REPO_DETAILS}
 `
 
 export const GET_ME = gql`

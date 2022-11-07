@@ -34,8 +34,8 @@ const Item = ({ label, count }) => {
   )
 }
 
-const RepositoryItemContent = ({ repository }) => {
-  const { stargazersCount, forksCount, ratingAverage, reviewCount } = repository
+const RepositoryItemContent = ({ repo }) => {
+  const { stargazersCount, forksCount, ratingAverage, reviewCount } = repo
 
   return (
     <View style={styles.content}>

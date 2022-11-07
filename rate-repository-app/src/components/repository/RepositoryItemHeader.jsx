@@ -30,27 +30,24 @@ const styles = StyleSheet.create({
   },
 })
 
-const RepositoryItemHeader = ({ repository }) => {
+const RepositoryItemHeader = ({ repo }) => {
   return (
     <View style={styles.header}>
-      <Image
-        style={styles.avatar}
-        source={{ uri: repository.ownerAvatarUrl }}
-      />
+      <Image style={styles.avatar} source={{ uri: repo.ownerAvatarUrl }} />
       <View style={styles.headerRight}>
         <Text fontWeight="bold" fontSize="subheading">
-          {repository.fullName}
+          {repo.fullName}
         </Text>
         <Text
           color="textSecondary"
           fontSize="subheading"
           style={styles.description}
         >
-          {repository.description}
+          {repo.description}
         </Text>
         <View style={styles.languageContainer}>
           <Text color="white" fontWeight="bold">
-            {repository.language}
+            {repo.language}
           </Text>
         </View>
       </View>

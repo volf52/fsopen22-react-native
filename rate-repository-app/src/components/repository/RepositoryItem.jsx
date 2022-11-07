@@ -1,22 +1,31 @@
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, View, Button, Linking } from "react-native"
 import theme from "../../theme"
+import Card from "../utils/Card"
 import RepositoryItemContent from "./RepositoryItemContent"
 
 import RepositoryItemHeader from "./RepositoryItemHeader"
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: theme.colors.white,
-    padding: 10,
+  ghBtn: {
+    backgroundColor: theme.colors.primary,
+    padding: 15,
   },
 })
 
-const RepositoryItem = ({ item: repository }) => {
+const RepositoryItem = ({ repo, withGithub }) => {
   return (
-    <View style={styles.container} testID="repositoryItem">
-      <RepositoryItemHeader repository={repository} />
-      <RepositoryItemContent repository={repository} />
-    </View>
+    <Card testID="repositoryItem">
+      <RepositoryItemHeader repo={repo} />
+      <RepositoryItemContent repo={repo} />
+
+      {withGithub && (
+        <Button
+          style={styles.ghBtn}
+          onPress={() => Linking.openURL(repo.url)}
+          title="Open in GitHub"
+        />
+      )}
+    </Card>
   )
 }
 
