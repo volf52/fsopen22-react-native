@@ -1,7 +1,7 @@
 import Constants from "expo-constants"
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, View, Dimensions } from "react-native"
 
-import AppBar from "../components/AppBar"
+import AppBar from "../components/nav/AppBar"
 import RepositoryView from "./RepositoryView"
 
 const styles = StyleSheet.create({
@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
     flexGrow: 1,
     flexShrink: 1,
+    minHeight: Dimensions.get("window").height,
   },
 })
 

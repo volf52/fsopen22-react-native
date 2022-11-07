@@ -1,20 +1,22 @@
 import { View, StyleSheet } from "react-native"
 
-import Text from "../components/Text"
-import RepositoryList from "../components/RepositoryList"
+import Text from "../components/utils/Text"
+import RepositoryList from "../components/repository/RepositoryList"
 
 import theme from "../theme"
+import utilStyles from "../utils/styles"
+
+const { padding10, flexRow, justifyCenter, view: viewStyle } = utilStyles
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: theme.background.main,
-    padding: 5,
-  },
-  heading: {
-    padding: 10,
-    flexDirection: "row",
-    justifyContent: "center",
-  },
+  container: [
+    viewStyle,
+    {
+      backgroundColor: theme.colors.bg.main,
+      padding: 5,
+    },
+  ],
+  heading: [flexRow, justifyCenter, padding10],
 })
 
 const RepositoryView = () => {

@@ -3,11 +3,11 @@ import Constants from "expo-constants"
 
 import AppBarTab from "./AppBarTab"
 
-import theme from "../theme"
+import theme from "../../theme"
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.background.bar,
+    backgroundColor: theme.colors.bg.bar,
     paddingHorizontal: Constants.statusBarHeight,
     height: 75,
     flexDirection: "row",

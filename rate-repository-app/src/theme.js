@@ -3,7 +3,12 @@ const theme = {
     textPrimary: "#24292e",
     textSecondary: "#586069",
     textWhite: "#fffff0",
+    white: "#fff",
     primary: "#0366d6",
+    bg: {
+      bar: "#24292e",
+      main: "#e1e4e8",
+    },
   },
   fontSizes: {
     body: 14,
@@ -15,10 +20,6 @@ const theme = {
   fontWeights: {
     normal: "400",
     bold: "700",
-  },
-  background: {
-    bar: "#24292e",
-    main: "#e1e4e8",
   },
 }
 

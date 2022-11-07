@@ -1,4 +1,4 @@
-import theme from "../theme"
+import theme from "../../theme"
 import { Text as NativeText, StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     color: theme.colors.primary,
   },
   colorWhite: {
-    color: theme.colors.white,
+    color: theme.colors.textWhite,
   },
   fontSizeSubheading: {
     fontSize: theme.fontSizes.subheading,
