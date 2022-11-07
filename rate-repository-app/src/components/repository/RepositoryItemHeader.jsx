@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image } from "react-native"
 
-import theme from "../../theme"
+import theme from "../../utils/theme"
 
 import Text from "../utils/Text"
 

@@ -3,7 +3,7 @@ import Constants from "expo-constants"
 
 import AppBarTab from "./AppBarTab"
 
-import theme from "../../theme"
+import theme from "../../utils/theme"
 import useAuthStorage from "../../hooks/useAuthStorage"
 import { useNavigate } from "react-router-native"
 import useAuthorizedUser from "../../hooks/useAuthorizedUser"

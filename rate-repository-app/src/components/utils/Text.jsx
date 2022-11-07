@@ -1,4 +1,4 @@
-import theme from "../../theme"
+import theme from "../../utils/theme"
 import { Text as NativeText, StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({

@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native"
 
-import theme from "../../theme"
+import theme from "../../utils/theme"
 
 const styles = StyleSheet.create({
   card: {
@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
   },
 })
 
-const Card = ({ children }) => {
-  return <View style={styles.card}>{children}</View>
+const Card = ({ children, style }) => {
+  return <View style={[styles.card, style]}>{children}</View>
 }
 
 export default Card

@@ -1,8 +1,9 @@
 import { View, StyleSheet } from "react-native"
+import theme from "../../utils/theme"
 
 const styles = StyleSheet.create({
   separator: {
-    height: 10,
+    height: theme.separator,
   },
 })
 

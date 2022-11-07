@@ -1,5 +1,5 @@
 import { StyleSheet, View, Button, Linking } from "react-native"
-import theme from "../../theme"
+import theme from "../../utils/theme"
 import Card from "../utils/Card"
 import RepositoryItemContent from "./RepositoryItemContent"
 

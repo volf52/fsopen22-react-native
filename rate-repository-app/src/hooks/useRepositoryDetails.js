@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client"
 import { GET_REPOSITORY } from "../graphql/queries"
 
-const useRepoistory = (id) => {
+const useRepositoryDetails = (id) => {
   const { data, loading, error, fetchMore } = useQuery(GET_REPOSITORY, {
     fetchPolicy: "cache-and-network",
     variables: { id },
@@ -17,4 +17,4 @@ const useRepoistory = (id) => {
   }
 }
 
-export default useRepoistory
+export default useRepositoryDetails

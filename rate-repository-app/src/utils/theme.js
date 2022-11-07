@@ -28,6 +28,7 @@ const theme = {
     normal: "400",
     bold: "700",
   },
+  separator: 10,
 }
 
 export default theme

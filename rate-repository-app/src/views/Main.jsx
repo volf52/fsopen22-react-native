@@ -6,7 +6,7 @@ import RepositoryView from "./RepositoryView"
 import SignInView from "./SignInView"
 import RepoDetailsView from "./RepoDetailsView"
 
-import theme from "../theme"
+import theme from "../utils/theme"
 
 const styles = StyleSheet.create({
   container: {

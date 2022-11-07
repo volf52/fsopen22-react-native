@@ -1,5 +1,6 @@
 import { FlatList } from "react-native"
 import { useNavigate } from "react-router-native"
+import DummyFooter from "../utils/DummyFooter"
 
 import ItemSeperator from "../utils/ItemSeperator"
 import PressableRepoItem from "./PressableRepoItem"
@@ -18,10 +19,12 @@ const RepositoryList = ({ repositories }) => {
   return (
     <FlatList
       data={repoNodes}
-      ItemSeparatorComponent={ItemSeperator}
+      keyExtractor={({ id }) => id}
       renderItem={({ item }) => (
         <PressableRepoItem repo={item} onPress={() => onPress(item.id)} />
       )}
+      ItemSeparatorComponent={ItemSeperator}
+      ListFooterComponent={DummyFooter}
     />
   )
 }
