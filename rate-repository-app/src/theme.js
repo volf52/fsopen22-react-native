@@ -5,6 +5,7 @@ const theme = {
     textWhite: "#fffff0",
     white: "#fff",
     primary: "#0366d6",
+    error: "#d73a4a",
     bg: {
       bar: "#24292e",
       main: "#e1e4e8",
