@@ -2,13 +2,19 @@ import { FlatList } from "react-native"
 
 import ItemSeperator from "../utils/ItemSeperator"
 
-import { repositories } from "../../data"
+import useRepositories from "../../hooks/useRepositories"
 import RepositoryItem from "./RepositoryItem"
 
 const RepositoryList = () => {
+  const { repositories } = useRepositories()
+
+  const repoNodes = repositories
+    ? repositories.edges.map((edge) => edge.node)
+    : []
+
   return (
     <FlatList
-      data={repositories}
+      data={repoNodes}
       ItemSeparatorComponent={ItemSeperator}
       renderItem={RepositoryItem}
     />
