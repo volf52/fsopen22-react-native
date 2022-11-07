@@ -1,5 +1,5 @@
-import { describe, expect, it, jest } from "@jest/globals"
-import { render, fireEvent } from "@testing-library/react-native"
+import { describe, expect, it } from "@jest/globals"
+import { render } from "@testing-library/react-native"
 
 import RepositoryList from "../../../src/components/repository/RepositoryList"
 
