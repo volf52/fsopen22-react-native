@@ -1,9 +1,9 @@
 import { View, StyleSheet } from "react-native"
 
 import Text from "../components/utils/Text"
-import RepositoryList from "../components/repository/RepositoryList"
 
 import utilStyles from "../utils/styles"
+import RepositoryListContainer from "../components/repository/RepositoryListContainer"
 
 const {
   padding10,
@@ -27,7 +27,7 @@ const RepositoryView = () => {
         </Text>
       </View>
 
-      <RepositoryList />
+      <RepositoryListContainer />
     </View>
   )
 }
