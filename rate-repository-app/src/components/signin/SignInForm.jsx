@@ -3,7 +3,7 @@ import Form from "../utils/Form"
 
 import FormButton from "../utils/FormButton"
 
-const SignInForm = ({ onSubmit }) => {
+const SignInForm = ({ onSubmit, loading }) => {
   return (
     <Form>
       <FormikTextInput
@@ -17,7 +17,12 @@ const SignInForm = ({ onSubmit }) => {
         secureTextEntry
         testID="passwordField"
       />
-      <FormButton onPress={onSubmit} text="Sign in" testID="submitButton" />
+      <FormButton
+        onPress={onSubmit}
+        text="Sign in"
+        testID="submitButton"
+        loading={loading}
+      />
     </Form>
   )
 }

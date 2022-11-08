@@ -9,6 +9,7 @@ import RepoDetailsView from "./RepoDetailsView"
 import CreateReviewView from "./CreateReviewView"
 
 import theme from "../utils/theme"
+import SignUpView from "./SignUpView"
 
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +30,7 @@ const Main = () => {
         <Route path="/login" exact element={<SignInView />} />
         <Route path="/repo/:id" exact element={<RepoDetailsView />} />
         <Route path="/create-review" exact element={<CreateReviewView />} />
+        <Route path="/signup" exact element={<SignUpView />} />
         <Route path="*" replace element={<Navigate to="/" />} />
       </Routes>
     </View>
