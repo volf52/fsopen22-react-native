@@ -13,8 +13,8 @@ const SignInView = () => {
       await signIn({ username, password })
       navigate("/")
     } catch (err) {
-      console.error(err)
-      Alert.alert("Error", err.message)
+      console.log(err)
+      Alert.alert("Login Error", err.message)
     }
   }
 

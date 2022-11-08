@@ -21,7 +21,7 @@ const CreateReviewView = () => {
       navigate(`/repo/${repoId}`)
     } catch (err) {
       console.log("error", err.message)
-      Alert.alert("Error", err.message)
+      Alert.alert("Error creating review", err.message)
     }
   }
 

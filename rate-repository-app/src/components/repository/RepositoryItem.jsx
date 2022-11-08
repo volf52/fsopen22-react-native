@@ -1,18 +1,16 @@
-import { StyleSheet, View, Button, Linking } from "react-native"
-import theme from "../../utils/theme"
+import { Linking } from "react-native"
+import { Button } from "native-base"
+
 import Card from "../utils/Card"
 import RepositoryItemContent from "./RepositoryItemContent"
 
 import RepositoryItemHeader from "./RepositoryItemHeader"
 
-const styles = StyleSheet.create({
-  ghBtn: {
-    backgroundColor: theme.colors.primary,
-    padding: 15,
-  },
-})
-
 const RepositoryItem = ({ repo, withGithub }) => {
+  const openGithub = () => {
+    Linking.openURL(repo.url)
+  }
+
   return (
     <Card testID="repositoryItem">
       <RepositoryItemHeader repo={repo} />
@@ -20,10 +18,12 @@ const RepositoryItem = ({ repo, withGithub }) => {
 
       {withGithub && (
         <Button
-          style={styles.ghBtn}
-          onPress={() => Linking.openURL(repo.url)}
-          title="Open in GitHub"
-        />
+          backgroundColor="primary.600"
+          borderRadius={25}
+          onPress={openGithub}
+        >
+          Open in Github
+        </Button>
       )}
     </Card>
   )

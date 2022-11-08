@@ -1,43 +1,31 @@
-import { StyleSheet, View } from "react-native"
+import { View } from "react-native"
 import { useField } from "formik"
+import { Input, Text, AlertDialog } from "native-base"
 
-import TextInput from "../utils/TextInput"
-import Text from "../utils/Text"
 import theme from "../../utils/theme"
 
-const styles = StyleSheet.create({
-  errorText: {
-    marginTop: 5,
-    color: theme.colors.error,
-  },
-  textInput: {
-    borderRadius: theme.form.input.borderRadius,
-    borderColor: theme.form.input.borderColor,
-  },
-  errorInput: {
-    borderColor: theme.colors.error,
-  },
-  container: {
-    marginVertical: theme.form.input.marginVertical,
-  },
-})
+const marginTop = Math.floor(theme.form.input.marginVertical / 2)
 
-const FormikTextInput = ({ name, style, ...props }) => {
+const FormikTextInput = ({ name, ...props }) => {
   const [field, meta, helpers] = useField(name)
   const showError = meta.touched && meta.error
 
   return (
-    <View style={styles.container}>
-      <TextInput
+    <View>
+      <Input
+        isFullWidth={true}
         onChangeText={(value) => helpers.setValue(value)}
         onBlur={() => helpers.setTouched(true)}
         value={field.value}
         error={showError}
-        style={[styles.textInput, showError && styles.errorInput, style]}
+        borderRadius="lg"
+        borderColor={showError ? "red.500" : "gray.300"}
+        size="lg"
+        marginTop={marginTop}
         {...props}
       />
 
-      {showError && <Text style={styles.errorText}>{meta.error}</Text>}
+      {showError && <Text color="red.800">{meta.error}</Text>}
     </View>
   )
 }

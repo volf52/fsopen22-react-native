@@ -16,7 +16,7 @@ const SignUpView = () => {
       navigate("/login")
     } catch (err) {
       console.log(err)
-      Alert.alert("Error", err.message)
+      Alert.alert("Sign Up Error", err.message)
     }
   }
 

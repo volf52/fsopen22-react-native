@@ -4,10 +4,10 @@ import * as yup from "yup"
 import CreateReviewForm from "./CreateReviewForm"
 
 const initialValues = {
-  ownerName: "jaredpalmer",
-  repositoryName: "formik",
-  rating: "99",
-  text: "awesome",
+  ownerName: "",
+  repositoryName: "",
+  rating: "",
+  text: "",
 }
 
 const validationSchema = yup.object().shape({
