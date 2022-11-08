@@ -29,6 +29,18 @@ const theme = {
     bold: "700",
   },
   separator: 10,
+  form: {
+    bg: "#f6f8fa",
+    input: {
+      bg: "#fff",
+      border: "#e1e4e8",
+      borderRadius: 15,
+      marginVertical: 5,
+    },
+    borderRadius: 15,
+    padding: 15,
+    margin: 15,
+  },
 }
 
 export default theme

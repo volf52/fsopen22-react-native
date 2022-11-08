@@ -39,6 +39,7 @@ const AppBar = () => {
 
         {authorizedUser ? (
           <>
+            <AppBarTab text="Create a review" link="/create-review" />
             <AppBarTab text="Sign out" onPress={logout} />
           </>
         ) : (
