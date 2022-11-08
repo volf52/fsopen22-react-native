@@ -9,6 +9,7 @@ import SignInView from "./SignInView"
 import RepoDetailsView from "./RepoDetailsView"
 import CreateReviewView from "./CreateReviewView"
 import SignUpView from "./SignUpView"
+import MyReviewsView from "./MyReviewsView"
 
 import theme from "../utils/theme"
 
@@ -30,6 +31,7 @@ const Main = () => {
         <Routes>
           <Route path="/" exact element={<RepositoryView />} />
           <Route path="/login" exact element={<SignInView />} />
+          <Route path="/reviews" exact element={<MyReviewsView />} />
           <Route path="/repo/:id" exact element={<RepoDetailsView />} />
           <Route path="/create-review" exact element={<CreateReviewView />} />
           <Route path="/signup" exact element={<SignUpView />} />

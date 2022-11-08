@@ -10,9 +10,7 @@ const SignInView = () => {
 
   const onSubmit = async ({ username, password }) => {
     try {
-      const data = await signIn({ username, password })
-
-      console.log(data)
+      await signIn({ username, password })
       navigate("/")
     } catch (err) {
       console.error(err)

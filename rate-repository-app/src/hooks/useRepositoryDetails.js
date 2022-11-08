@@ -7,7 +7,7 @@ const useRepositoryDetails = ({ id, first }) => {
     first,
   }
 
-  const { data, loading, error, fetchMore } = useQuery(GET_REPOSITORY, {
+  const { data, loading, fetchMore, ...result } = useQuery(GET_REPOSITORY, {
     fetchPolicy: "cache-and-network",
     variables,
   })
@@ -28,8 +28,8 @@ const useRepositoryDetails = ({ id, first }) => {
   return {
     repository: data?.repository,
     loading,
-    error,
     fetchMore: handleFetchMore,
+    ...result,
   }
 }
 

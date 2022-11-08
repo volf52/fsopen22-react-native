@@ -11,9 +11,8 @@ const SignUpView = () => {
 
   const onSubmit = async ({ username, password }) => {
     try {
-      const data = await signUp({ username, password })
+      await signUp({ username, password })
 
-      console.log(data)
       navigate("/login")
     } catch (err) {
       console.log(err)

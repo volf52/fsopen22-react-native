@@ -18,8 +18,6 @@ const CreateReviewView = () => {
         text,
       })
 
-      console.log(repoId)
-
       navigate(`/repo/${repoId}`)
     } catch (err) {
       console.log("error", err.message)
