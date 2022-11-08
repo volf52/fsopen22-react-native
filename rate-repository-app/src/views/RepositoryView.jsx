@@ -16,9 +16,10 @@ const RepositoryView = () => {
 
   const [searchKeyword, setSearchKeyword] = useState("")
 
-  const { repositories, loading } = useRepositories({
+  const { repositories, loading, fetchMore } = useRepositories({
     order: orderBy,
     searchKeyword,
+    first: 8,
   })
 
   return (
@@ -37,7 +38,7 @@ const RepositoryView = () => {
         />
       </Container>
 
-      <RepositoryList repositories={repositories} />
+      <RepositoryList repositories={repositories} onEndReach={fetchMore} />
     </Container>
   )
 }

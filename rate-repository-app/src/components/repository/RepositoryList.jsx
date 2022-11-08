@@ -5,7 +5,7 @@ import DummyFooter from "../utils/DummyFooter"
 import ItemSeperator from "../utils/ItemSeperator"
 import PressableRepoItem from "./PressableRepoItem"
 
-const RepositoryList = ({ repositories }) => {
+const RepositoryList = ({ repositories, onEndReach }) => {
   const repoNodes = repositories
     ? repositories.edges.map((edge) => edge.node)
     : []
@@ -27,6 +27,8 @@ const RepositoryList = ({ repositories }) => {
           )}
           ItemSeparatorComponent={ItemSeperator}
           ListFooterComponent={DummyFooter}
+          onEndReached={onEndReach}
+          onEndReachedThreshold={0.5}
         />
       </View>
     </>

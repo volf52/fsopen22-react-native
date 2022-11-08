@@ -16,10 +16,15 @@ const styles = StyleSheet.create({
 })
 
 const RepoDetailsContainer = ({ repoId }) => {
-  const { repository, loading, error } = useRepoDetails(repoId)
+  const { repository, loading, error, fetchMore } = useRepoDetails({
+    id: repoId,
+    first: 4,
+  })
 
   if (loading) return <Text>Loading...</Text>
   if (error) return <Text>Error: {error}</Text>
+
+  if (!repository) return null
 
   const reviews = repository.reviews.edges.map((edge) => edge.node)
 
@@ -33,6 +38,8 @@ const RepoDetailsContainer = ({ repoId }) => {
         ListHeaderComponentStyle={styles.bottom}
         ItemSeparatorComponent={ItemSeperator}
         ListFooterComponent={DummyFooter}
+        onEndReached={fetchMore}
+        onEndReachedThreshold={0.5}
       />
     </Container>
   )
