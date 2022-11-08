@@ -35,8 +35,6 @@ const styles = StyleSheet.create({
 })
 
 const ReviewItem = ({ review }) => {
-  console.log(review)
-
   const dateFormatted = parseDate(review.createdAt).format("DD.MM.YYYY")
 
   return (

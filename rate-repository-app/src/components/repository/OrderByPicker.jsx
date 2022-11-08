@@ -1,33 +1,32 @@
-import { Picker } from "@react-native-picker/picker"
+import { Select } from "native-base"
 
 import { ORDER_BY_OPTIONS } from "./orderByOptions"
 
-const OrderByPicker = ({ orderByValue, onOrderByChange, enabled }) => {
+const OrderByPicker = ({ orderByValue, onOrderByChange, disabled }) => {
   return (
-    <Picker
+    <Select
       selectedValue={orderByValue}
       onValueChange={onOrderByChange}
-      enabled={enabled}
+      placeholder="Select an item..."
+      bg="muted.100"
+      isDisabled={disabled}
+      _selectedItem={{
+        bg: "teal.600",
+      }}
     >
-      <Picker.Item
-        label="Select an item..."
-        value=""
-        enabled={false}
-        style={{ color: "gray" }}
-      />
-      <Picker.Item
+      <Select.Item
         label={ORDER_BY_OPTIONS.LATEST_REPOSITORIES.label}
         value={ORDER_BY_OPTIONS.LATEST_REPOSITORIES.value}
       />
-      <Picker.Item
+      <Select.Item
         label={ORDER_BY_OPTIONS.HIGHEST_RATED_REPOSITORIES.label}
         value={ORDER_BY_OPTIONS.HIGHEST_RATED_REPOSITORIES.value}
       />
-      <Picker.Item
+      <Select.Item
         label={ORDER_BY_OPTIONS.LOWEST_RATED_REPOSITORIES.label}
         value={ORDER_BY_OPTIONS.LOWEST_RATED_REPOSITORIES.value}
       />
-    </Picker>
+    </Select>
   )
 }
 

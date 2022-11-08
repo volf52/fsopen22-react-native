@@ -3,9 +3,10 @@ import { GET_REPOSITORIES } from "../graphql/queries"
 
 import { OrderByQueryOptions } from "../components/repository/orderByOptions"
 
-const useRepositories = ({ order }) => {
+const useRepositories = ({ order, searchKeyword }) => {
   const variables = {
     ...OrderByQueryOptions[order],
+    searchKeyword,
   }
 
   const { data, loading, refetch } = useQuery(GET_REPOSITORIES, {
